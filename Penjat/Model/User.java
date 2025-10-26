@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class User implements Serializable{
     private String name;
     private String user;
     private String password;
@@ -33,17 +33,15 @@ public class User implements Serializable {
 
     public void addPunts(int punts) {
         this.punts += punts;
-        if(this.punts < 0){
-            this.punts = 0;
-        }
     }
 
     public boolean isAdmin() {
         return admin;
     }
 
-    public int getPunts() {
-        return punts;
+    public String getName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getName'");
     }
-
+    
 }
