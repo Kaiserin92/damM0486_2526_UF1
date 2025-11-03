@@ -4,6 +4,7 @@ public class Penjat {
 
     public final static int LOGIN = 1, REGISTER = 2, EXIT = 3;
     public final static int JUGAR = 1, EXIT_JOC = 2, AFEGIR_PARAULES = 3;
+
     // MCV
     public static void main(String[] args) {
 
@@ -15,13 +16,13 @@ public class Penjat {
 
         boolean exit = false;
 
-        while(!exit){
+        while (!exit) {
 
             int opcio = PenjatView.menuPrincipal();
 
-            switch(opcio){
+            switch (opcio) {
                 case REGISTER:
-                    String [] dadesReg = PenjatView.menuRegistre();
+                    String[] dadesReg = PenjatView.menuRegistre();
                     String name = dadesReg[0];
                     String username = dadesReg[1];
                     String password = dadesReg[2];
@@ -29,16 +30,16 @@ public class Penjat {
                     UserUtils.registerUser(newUser);
                     break;
                 case LOGIN:
-                    String [] dadesLog = PenjatView.menuLogin();
+                    String[] dadesLog = PenjatView.menuLogin();
                     String usernameLog = dadesLog[0];
                     String passwordLog = dadesLog[1];
 
-                    if(UserUtils.loginUser(usernameLog, passwordLog)){
+                    if (UserUtils.loginUser(usernameLog, passwordLog)) {
                         System.out.println("Usuari correcte.");
                         boolean exitJoc = false;
-                        while(!exitJoc){
+                        while (!exitJoc) {
                             opcio = PenjatView.menuJoc(usernameLog);
-                            switch(opcio){
+                            switch (opcio) {
                                 case JUGAR:
                                     paraulesUtils.playGame();
                                     break;
@@ -57,7 +58,7 @@ public class Penjat {
                         }
 
                         exit = true;
-                    }else{
+                    } else {
                         System.out.println("Usuari o contrasenya incorrectes.");
                     }
 
