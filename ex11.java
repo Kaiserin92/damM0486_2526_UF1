@@ -2,7 +2,7 @@ import java.io.File;
 
 public class ex11 {
     public static void main(String[] args) {
-
+//CANVI
         String ruta = args[0];
         File path = new File(ruta);
 
