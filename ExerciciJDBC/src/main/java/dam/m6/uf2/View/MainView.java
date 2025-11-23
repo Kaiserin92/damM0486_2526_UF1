@@ -3,6 +3,7 @@ package dam.m6.uf2.View;
 import java.util.List;
 import java.util.Scanner;
 
+import dam.m6.uf2.Model.Atleta;
 import dam.m6.uf2.Model.Esport;
 
 public class MainView {
@@ -43,15 +44,55 @@ public class MainView {
         return read.nextLine();
     }
 
-    public void printSeparador(){
+    public void printSeparador() {
         System.out.println("--------------------------------");
     }
 
     public void llistaEsports(List<Esport> esports) {
-    printSeparador();
-    for (Esport esport : esports) {
-        System.out.println(esport);
+        printSeparador();
+        for (Esport esport : esports) {
+            System.out.println(esport);
+        }
     }
-}
+
+    public int demanaEsport() {
+        Scanner read = new Scanner(System.in);
+        int codEsport = -1;
+        System.out.println("Introdueix el codi de l'esport per llistar atletas: ");
+        if (read.hasNextInt()) {
+            codEsport = read.nextInt();
+        } else {
+            System.out.println("⚠ Entrada no válida.");
+            read.next();
+        }
+        return codEsport;
+    }
+
+    public void llistaAtletes(List<Atleta> atletes) {
+        printSeparador();
+        for (Atleta atleta : atletes) {
+            System.out.println(atleta);
+        }
+    }
+
+    public Atleta atletaForm() {
+        Scanner read = new Scanner(System.in);
+        System.out.println("--------------------------------");
+        System.out.println("Nom de l'atleta:");
+        String nom = read.nextLine();
+
+        System.out.println("Codi de l'esport:");
+        int codEsport = read.nextInt();
+        read.nextLine(); // netejar buffer
+
+        return new Atleta(0, nom, codEsport);
+    }
+
+    public String cercaAtleta(){
+        Scanner read = new Scanner(System.in);
+        System.out.println("--------------------------------");
+        System.out.println("Nom de l'atleta:");
+        return read.nextLine();
+    }
 
 }
