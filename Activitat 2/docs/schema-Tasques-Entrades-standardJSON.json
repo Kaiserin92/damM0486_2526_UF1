@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "_id",
+    "cognom1",
+    "cognom2",
+    "completa",
+    "data_entrada",
+    "nom_alumne",
+    "observacions"
+  ],
+  "properties": {
+    "_id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "cognom1": {
+      "type": "string"
+    },
+    "cognom2": {
+      "type": "string"
+    },
+    "completa": {
+      "type": "boolean"
+    },
+    "data_entrada": {
+      "type": "string"
+    },
+    "nom_alumne": {
+      "type": "string"
+    },
+    "observacions": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "ObjectId": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{24}$"
+        }
+      },
+      "required": [
+        "$oid"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
