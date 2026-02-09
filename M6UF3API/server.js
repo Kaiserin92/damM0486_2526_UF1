@@ -77,6 +77,7 @@ app.get('/list', async (req, res) => {
     const entrades = await Entrades.find();
     res.status(200).json(entrades);
     console.log("working");
+    res.send(uri);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching entrades', error: err.message });
   }
