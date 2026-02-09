@@ -49,7 +49,7 @@ const Entrades = mongoose.model('Tasques', entradesSchema);
 
 // Ruta a l'arrel
 app.get('/', (req, res) => {
-  res.send('Your API is running!');
+  res.send('Ara!');
 });
 
 // Ruta per obtenir albums entre dates
